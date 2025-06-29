@@ -1,63 +1,70 @@
-# 📝 Prueba Técnica - Desarrollador Backend Semi-Senior
+# Prueba Técnica – API REST de Productos
 
-## ⚠️ Antes de comenzar
-
-Por favor, **lee toda la prueba completa antes de empezar**. El tiempo estimado para completarla es de **2-3 horas**, pero puedes tomar hasta **24 horas** para entregarla. La entrega se realiza a través de un **Pull Request (PR)** en este repositorio.
-
-## 🔥 Instrucciones Generales
-
-1. **Haz un fork** de este repositorio en tu cuenta de GitHub.
-2. Crea una nueva rama con tu nombre o un identificador único:
-   ```bash
-   git checkout -b tu-nombre
-   ```
-3. Desarrolla tu solución en la rama creada.
-4. Una vez finalizado, sube tus cambios a tu repositorio y abre un **Pull Request (PR)** hacia este repositorio.
-5. **Asegúrate de incluir una breve descripción en el PR** explicando tu enfoque y decisiones técnicas.
-6. Puedes usar **IA o cualquier recurso** que consideres necesario, pero ten en cuenta que podrías ser requerido para sustentar tu solución.
-
-## 📌 Requerimientos
-
-### 1️⃣ Implementación de API en NestJS
-
-- Crea un servicio en **NestJS** que exponga endpoints para manejar entidades en **PostgreSQL** usando el ORM de tu preferencia (TypeORM o Prisma).
-- Debe incluir CRUD para una entidad llamada `Productos` con los siguientes campos:
-  - `id` (UUID, PK)
-  - `nombre` (string)
-  - `precio` (decimal)
-  - `stock` (entero)
-
-### 2️⃣ Seguridad y Buenas Prácticas
-
-- Implementa **validaciones** con DTOs en los endpoints.
-- Manejo adecuado de **excepciones**.
-- Configuración de variables de entorno con `.env`.
-
-### 3️⃣ Pruebas Unitarias
-
-- Escribe pruebas unitarias para al menos un servicio usando **Jest**.
-
-### 4️⃣ Conocimientos en AWS (Opcional, suma puntos)
-
-- Describe cómo desplegarías esta API en **AWS ECS + RDS**.
-- Explica brevemente cómo manejarías secretos con **AWS Secrets Manager**.
-- Opcionalmente, agrega un pequeño **Terraform** para crear el RDS.
-
-### 5️⃣ CI/CD con GitHub Actions y Terraform (Opcional, suma puntos)
-
-- Crea un workflow en **GitHub Actions** para ejecutar pruebas automáticamente en cada `push` o `PR`.
-- Opcionalmente, agrega un paso en el pipeline para desplegar la API en AWS usando **Terraform**.
-
-## ⏳ Tiempo Estimado
-
-Queremos que tengas el tiempo suficiente para hacerlo bien, pero sin presionarte demasiado. Lo ideal es que puedas completarlo en unas **2-3 horas**, pero puedes tomar hasta **24 horas** para entregarlo.
-
-## 📬 Entrega
-
-- Haz un **Pull Request** con tu código.
-- Asegúrate de que los endpoints sean funcionales.
-- Si tienes comentarios o explicaciones, agrégalas en el `README.md` de tu fork.
+Este proyecto es una API RESTful desarrollada para gestionar productos. Permite realizar operaciones de **creación, modificación, consulta, eliminación**, así como la **activación e inactivación** de productos. La información se almacena en una base de datos PostgreSQL.
 
 ---
 
-¡Buena suerte y esperamos ver tu solución! 🚀
+## ⚙️ Configuración del Proyecto
+
+### `.env.template`
+
+Este archivo contiene las variables de entorno necesarias para el funcionamiento de la API. Para configurarlo:
+
+1. Renombra el archivo `.env.template` a `.env`.
+2. Asigna valores válidos a las variables, por ejemplo:
+
+```
+env
+PORT=3000                    # Puerto donde se expondrá la API
+DATABASE_URL=postgres://... # Cadena de conexión a PostgreSQL
+```
+
+## 📁 Archivos Adicionales
+A continuación se describen los archivos adicionales incluidos en el proyecto:
+
+### api-products.postman_collection.json
+Colección de Postman con ejemplos de los endpoints expuestos por la API api-products. Puedes importarla directamente en la aplicación Postman para probar fácilmente cada ruta.
+
+### example-CI.yml
+Workflow de GitHub Actions para Integración Continua (CI). Ejecuta:
+
+Instalación de dependencias.
+
+Linting y pruebas unitarias.
+
+Sirve para validar que el proyecto funcione correctamente antes de aceptar cambios en el código.
+
+### example-CD.yml
+Workflow de GitHub Actions para Despliegue Continuo (CD). Este archivo simula el proceso de despliegue de la API de forma local. Puede extenderse fácilmente para apuntar a un entorno real (por ejemplo, AWS o Vercel).
+
+## 🧪 Requisitos y dependencias
+* Node.js v22.17.0
+
+* Yarn
+
+* PostgreSQL
+
+* Postman (opcional, para probar endpoints)
+
+### ¿Cómo ejecutar la API?
+
+Crea el archivo .env a partir de .env.template.
+
+#### Instala dependencias:
+``` 
+bash
+yarn install
+```
+
+#### Ejecuta la API:
+```
+bash
+yarn start:dev
+```
+
+### Pruebas Unitarias
+Puedes ejecutar las pruebas unitarias con:
+```
+bash
+yarn test
+```

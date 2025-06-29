@@ -1,0 +1,1340 @@
+{
+	"info": {
+		"_postman_id": "dd769db9-ddb6-4c64-aa49-9d7e58c79c8e",
+		"name": "api-products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30581598"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Product - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-VcbLSqnCCJ/Ha6pDRDqB72GvfW4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 05:47:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"id\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"moto\",\n        \"description\": \"\",\n        \"price\": 1000,\n        \"stock\": 10,\n        \"status\": true,\n        \"createdAt\": \"2025-06-28T05:47:48.528Z\",\n        \"updatedAt\": null\n    }\n}"
+						},
+						{
+							"name": "Create Product - BadRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"create"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-v9d3IHw82dB5AeUk1J/068JbITo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:29:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product exist.\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/?page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "296"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"128-xhwcuYKlkbP70EQHz8V77VIenv0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 05:48:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"produts\": [\n            {\n                \"id\": \"52925edf-1366-4579-8909-768720826340\",\n                \"name\": \"moto\",\n                \"description\": \"\",\n                \"price\": 1000,\n                \"stock\": 10,\n                \"status\": true,\n                \"createdAt\": \"2025-06-28T05:47:48.528Z\",\n                \"updatedAt\": null\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"totalItems\": 1,\n            \"LastPage\": 1,\n            \"limit\": 10\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product  By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"52925edf-1366-4579-8909-768720826340"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product By Id - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-N4DAZwKX9+/uNSF/XZViaDxJu1g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 05:59:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"id\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"moto\",\n        \"description\": \"\",\n        \"price\": 1000,\n        \"stock\": 10,\n        \"asset\": true,\n        \"createdAt\": \"2025-06-28T05:47:48.528Z\",\n        \"updatedAt\": null\n    }\n}"
+						},
+						{
+							"name": "Product  By Id - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:29:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\": \"YZ 125\",\r\n    \"price\": 100.00,\r\n    \"stock\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/update/2193db63-4e9c-4c12-9b1e-60b8fd8e7fb9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"update",
+								"2193db63-4e9c-4c12-9b1e-60b8fd8e7fb9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Product - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto Kawasaki\",\r\n    \"description\": \"YZ 125\",\r\n    \"price\": 100.00,\r\n    \"stock\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/update/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"update",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-WhMrLVPs19JjiyuuxuZToah9WfE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:04:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Update product success.\",\n    \"data\": {\n        \"id\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"Moto Kawasaki\",\n        \"description\": \"YZ 125\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"asset\": true,\n        \"createdAt\": \"2025-06-28T05:47:48.528Z\",\n        \"updatedAt\": null\n    }\n}"
+						},
+						{
+							"name": "Update Product - Not Found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\": \"YZ 125\",\r\n    \"price\": 100.00,\r\n    \"stock\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/update/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"update",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:30:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Update Product - BandRequest",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\": \"YZ 125\",\r\n    \"price\": 100.00,\r\n    \"stock\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/update/2193db63-4e9c-4c12-9b1e-60b8fd8e7fb9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"update",
+										"2193db63-4e9c-4c12-9b1e-60b8fd8e7fb9"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-v9d3IHw82dB5AeUk1J/068JbITo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:31:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product exist.\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Status Product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/update-status/52925edf-1366-4579-8909-768720826340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"update-status",
+								"52925edf-1366-4579-8909-768720826340"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Status Product - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/update-status/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"update-status",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"109-zggvpsgGYamBYYxKo/7rEm9wMi4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:22:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Update status success.\",\n    \"data\": {\n        \"id\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"Moto Kawasaki\",\n        \"description\": \"YZ 125\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"asset\": false,\n        \"createdAt\": \"2025-06-28T05:47:48.528Z\",\n        \"updatedAt\": \"2025-06-28T06:22:54.241Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Status Product - Not Found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product/update-status/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"update-status",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:33:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"52925edf-1366-4579-8909-768720826340"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Product  - Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-AS7rkIpASQgJRDtFLgd4odnJL+I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:25:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Delete succes.\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Delete Product - Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/product/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:37:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			],
+			"description": "Esta carpeta contiene los end points que se usara para crear, consultar, actualizar, activar e inactivar un producto y de igual manera de eliminar lo."
+		},
+		{
+			"name": "Products Deleted",
+			"item": [
+				{
+					"name": "All Products Deleted",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product-deleted/?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product-deleted",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Products Deleted",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product-deleted/?page=1&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product-deleted",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1093"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"445-oJh2J8Nz8UEp6h6lM1qu4KdYqLk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:53:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"produts\": [\n            {\n                \"id\": \"044f5921-fb8b-4d48-b3fe-7137af3103ef\",\n                \"idProduct\": \"52925edf-1366-4579-8909-768720826340\",\n                \"name\": \"Moto Kawasaki\",\n                \"description\": \"YZ 125\",\n                \"price\": 100,\n                \"stock\": 10,\n                \"createdAtProduct\": \"2025-06-28T05:47:48.528Z\",\n                \"createdAt\": \"2025-06-28T06:25:55.003Z\"\n            },\n            {\n                \"id\": \"3af907cd-1b4c-47bd-87e8-f3e35f558fc7\",\n                \"idProduct\": \"8bf3f5a7-efae-4d9f-a270-dc87e4d503dd\",\n                \"name\": \"MOTTOOT\",\n                \"description\": \"\",\n                \"price\": 1000,\n                \"stock\": 10,\n                \"createdAtProduct\": \"2025-06-28T05:35:29.844Z\",\n                \"createdAt\": \"2025-06-28T05:45:22.026Z\"\n            },\n            {\n                \"id\": \"468f2d9a-e932-4626-bd39-4e9a8167bb4d\",\n                \"idProduct\": \"9e508194-bfb5-4510-9f8c-85f3e1bc9d15\",\n                \"name\": \"Moto\",\n                \"description\": \"\",\n                \"price\": 1000,\n                \"stock\": 10,\n                \"createdAtProduct\": \"2025-06-28T05:16:43.836Z\",\n                \"createdAt\": \"2025-06-28T05:45:51.597Z\"\n            },\n            {\n                \"id\": \"8289681f-1ec2-4685-b761-621a133cc182\",\n                \"idProduct\": \"0d3ae0a0-7213-4524-a59f-e1e4b320ecf3\",\n                \"name\": \"mottoot\",\n                \"description\": \"\",\n                \"price\": 1000,\n                \"stock\": 10,\n                \"createdAtProduct\": \"2025-06-28T05:46:02.812Z\",\n                \"createdAt\": \"2025-06-28T05:47:44.136Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"totalItems\": 4,\n            \"LastPage\": 1,\n            \"limit\": 10\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product  Deleted By IdProduct",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product-deleted/by-idProduct/52925edf-1366-4579-8909-768720826340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product-deleted",
+								"by-idProduct",
+								"52925edf-1366-4579-8909-768720826340"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product  Deleted By IdProduct - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product-deleted/52925edf-1366-4579-8909-768720826212",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product-deleted",
+										"52925edf-1366-4579-8909-768720826212"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-PPAvXtPRd4zT99uX8di+k5y90j8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:54:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"id\": \"044f5921-fb8b-4d48-b3fe-7137af3103ef\",\n        \"idProduct\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"Moto Kawasaki\",\n        \"description\": \"YZ 125\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"createdAtProduct\": \"2025-06-28T05:47:48.528Z\",\n        \"createdAt\": \"2025-06-28T06:25:55.003Z\"\n    }\n}"
+						},
+						{
+							"name": "Product  Deleted By IdProduct - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Moto\",\r\n    \"description\":\"\",\r\n    \"price\": 1000.0,\r\n    \"stock\":10.0\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/product-deleted/044f5921-fb8b-4d48-b3fe-7137af3103e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product-deleted",
+										"044f5921-fb8b-4d48-b3fe-7137af3103e"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:55:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Product Delete By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product-deleted/044f5921-fb8b-4d48-b3fe-7137af3103ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product-deleted",
+								"044f5921-fb8b-4d48-b3fe-7137af3103ef"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product Delete By Id - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/product-deleted/044f5921-fb8b-4d48-b3fe-7137af3103ef",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product-deleted",
+										"044f5921-fb8b-4d48-b3fe-7137af3103ef"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-PPAvXtPRd4zT99uX8di+k5y90j8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 07:00:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Success find\",\n    \"data\": {\n        \"id\": \"044f5921-fb8b-4d48-b3fe-7137af3103ef\",\n        \"idProduct\": \"52925edf-1366-4579-8909-768720826340\",\n        \"name\": \"Moto Kawasaki\",\n        \"description\": \"YZ 125\",\n        \"price\": 100,\n        \"stock\": 10,\n        \"createdAtProduct\": \"2025-06-28T05:47:48.528Z\",\n        \"createdAt\": \"2025-06-28T06:25:55.003Z\"\n    }\n}"
+						},
+						{
+							"name": "Product Delete By Id - Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/product-deleted/52925edf-1366-4579-8909-768720826340",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"product-deleted",
+										"52925edf-1366-4579-8909-768720826340"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-PfcKxKjI5iJuvfM0AKA2mvkqg00\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 06:59:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found.\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			],
+			"description": "Este folder contiene los end points para consultar todos los productos que se hayan eliminado de manera permanente"
+		}
+	]
+}
